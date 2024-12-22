@@ -5,13 +5,13 @@ const { validateSignUpData, validateEditProfileData } = require("../utils/signup
 const { userAuth } = require("../middleware/auth");
 
 profileRouter.get("/profile/view",userAuth, async (req, res)=>{
-    const cookies = req.cookies
-    const {token} = cookies;
+    // const cookies = req.cookies
+    // const {token} = cookies;
     
-    //valdation of cookie
-    const validateToken = await jwt.verify(token,"DEV@Tinder$790")
-    const {_id} = validateToken
-    console.log(cookies)
+    // //valdation of token
+    // const validateToken = await jwt.verify(token,"DEV@Tinder$790")
+    // const {_id} = validateToken
+    // console.log(cookies)
     const user = req.user
     res.send(user)
 });

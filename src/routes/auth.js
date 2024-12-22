@@ -5,7 +5,7 @@ const express = require ("express")
 const authRouter  = express.Router();
 const jwt = require("jsonwebtoken");
 
-authRouter.post("/signup",async (req,res)=>{
+authRouter.post("/signup", async(req,res)=>{
     try {
  
      //validation of data
