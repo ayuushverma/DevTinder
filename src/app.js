@@ -1,10 +1,18 @@
 const express = require("express")
 const cookieParser = require("cookie-parser");
-const connectDB=require("./config/connectDB.js");
+const connectDB = require("./config/connectDB.js");
 const app = express();
+const cors = require("cors");
+
+app.use(cors({
+    origin:"http://localhost:5173",
+    credentials:true
+}));
 
 app.use(express.json());
 app.use(cookieParser());
+
+
 connectDB().then(()=>{
     app.listen(7777,()=>{
         console.log("server is listening at port 7777")
